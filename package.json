@@ -1,0 +1,78 @@
+{
+  "name": "vscode-clash",
+  "displayName": "Clash",
+  "description": "yet another clash gui based on vscode.",
+  "version": "0.0.1",
+  "publisher": "suiwenfeng",
+  "license": "MIT",
+  "author": {
+    "name": "Wenfeng Sui",
+    "url": "https://suiwenfeng.github.io"
+  },
+  "keywords": [
+    "vscode-clash",
+    "clash",
+    "vpn",
+    "proxy"
+  ],
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/suiwenfeng/vscode-clash"
+  },
+  "icon": "resources/images/logo.png",
+  "engines": {
+    "vscode": "^1.69.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:vscode-clash.helloWorld"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vscode-clash.helloWorld",
+        "title": "Hello World"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "gts lint",
+    "test": "node ./out/test/runTest.js",
+    "clean": "gts clean",
+    "fix": "gts fix",
+    "prepare": "npm run compile",
+    "posttest": "npm run lint"
+  },
+  "dependencies": {
+    "@vscode/test-electron": "^2.1.5",
+    "glob": "^8.0.3",
+    "mocha": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.69.0",
+    "@typescript-eslint/eslint-plugin": "^5.31.0",
+    "@typescript-eslint/parser": "^5.31.0",
+    "@vscode/test-electron": "^2.1.5",
+    "eslint": "^8.20.0",
+    "glob": "^8.0.3",
+    "gts": "^3.1.0",
+    "mocha": "^10.0.0",
+    "ts-loader": "^9.3.1",
+    "typescript": "^4.7.4",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  }
+}
